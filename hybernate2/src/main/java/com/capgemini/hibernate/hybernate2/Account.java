@@ -1,5 +1,11 @@
 package com.capgemini.hibernate.hybernate2;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 @Entity
 
 public class Account {
@@ -9,7 +15,7 @@ public class Account {
 	private String accountNumber;
 	private String accountType;
 	
-	@OneToOne(mappedBy = account)
+	@OneToOne(mappedBy = "account")
 	private Customer customer;
 	
 	public Account() {

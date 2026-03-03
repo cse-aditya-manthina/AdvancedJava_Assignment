@@ -1,32 +1,44 @@
 package com.capgemini.hibernate.hybernate2;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        // step 1 : create entitymanagerFactory
-    	EntityManagerFactory emf = Presistance.createEntityManagerFactory("myPresistanceUnit");
-    	// step 2: create entityManager
-    	EntityManager em= emf.createEntityManger();
-    	// step 3: Begin Transaction
-    	em.getTransaction().begin();
-    	
-    	//step4: create objects
-    	Account account = new Account("ACC12345","Savings");
-    	Customer customer = new Customer("John Doe",account);
-    	// set bidirectional relationship
-    	account.setCustomer(customer);
-    	
-    	// step 5: presist customer (account will aslo presist if cascade is used
-    	em.presist(custonmer);
-    	// strep 6: commit transaction
-    	
-    	em.getTransaction().commit();
-    	System.out.println("customer and account saved successfully");
-    	
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class App {
+
+    public static void main(String[] args) {
+
+      //   Create EntityManagerFactory
+        EntityManagerFactory emf =
+                Persistence.createEntityManagerFactory("myPersistenceUnit");
+
+        // Create EntityManager
+        EntityManager em = emf.createEntityManager();
+
+        // Begin Transaction
+        em.getTransaction().begin();
+
+        //  Create objects
+        Account account = new Account();
+        account.setAccountNumber("ACC12345");
+        account.setAccountType("Savings");
+
+        Customer customer = new Customer();
+        customer.setName("John Doe");
+        customer.setAccount(account);
+
+        // Set bidirectional relationship
+        account.setCustomer(customer);
+
+        //  Persist customer (Account will persist due to CascadeType.ALL)
+        em.persist(customer);
+
+        //   Commit transaction
+        em.getTransaction().commit();
+
+        System.out.println("Customer and Account saved successfully");
+
+        em.close();
+        emf.close();
     }
 }
