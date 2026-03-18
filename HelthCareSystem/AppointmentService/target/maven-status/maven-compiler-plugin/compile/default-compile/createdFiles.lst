@@ -1,0 +1,7 @@
+com\example\demo\config\RabbitMQConfig.class
+com\example\demo\client\DoctorClient.class
+com\example\demo\client\DoctorDto.class
+com\example\demo\repository\AppointmentRepository.class
+com\example\demo\entity\Appointment.class
+com\example\demo\AppointmentServiceApplication.class
+com\example\demo\controller\AppointmentController.class

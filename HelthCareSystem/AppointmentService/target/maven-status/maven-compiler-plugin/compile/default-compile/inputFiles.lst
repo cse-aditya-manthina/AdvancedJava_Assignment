@@ -1,0 +1,7 @@
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\AppointmentServiceApplication.java
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\client\DoctorClient.java
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\client\DoctorDto.java
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\config\RabbitMQConfig.java
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\controller\AppointmentController.java
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\entity\Appointment.java
+E:\HelthCareSystem\AppointmentService\src\main\java\com\example\demo\repository\AppointmentRepository.java
